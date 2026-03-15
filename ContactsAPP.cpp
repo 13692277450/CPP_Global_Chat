@@ -36,13 +36,82 @@ void addPerson(Addressbooks* abs) {
         return;
     }
     struct Person personTemp;
+    cout << "Enter the name: ";
     cin >> personTemp.m_Name;
+    cout << "Enter the sex (1 for male, 0 for female): ";
     cin >> personTemp.m_Sex;
+    cout << "Enter the age: ";
     cin >> personTemp.m_Age;
+    cout << "Enter the address: ";
     cin >> personTemp.m_Addr;
+    cout << "Enter the phone number: ";
     cin >> personTemp.m_Phone;
     abs->personArray[abs->m_Size] = personTemp;
     abs->m_Size++;
+    cout << "Person added successfully." << endl;
+    system("pause");
+    system("cls");
+}
+void showPerson(Addressbooks* abs) {
+    string showName;
+    cout << "Pls enter person name: " << endl;
+    cin >> showName;
+    if (isExist(abs, showName)) {
+
+
+        for (int i = 0; i < abs->m_Size; i++) {
+            cout << "Name: " << abs->personArray[i].m_Name << endl;
+            cout << "Sex: " << ((abs->personArray[i].m_Sex == 1) ? "Male" : "Female") << endl;
+            cout << "Age: " << abs->personArray[i].m_Age << endl;
+            cout << "Address: " << abs->personArray[i].m_Addr << endl;
+            cout << "Phone: " << abs->personArray[i].m_Phone << endl;
+            cout << "-----------------------------" << endl;
+        }
+    } else {
+        cout << "Person not found." << endl;
+    }
+}
+
+void editPerson(Addressbooks* abs) {
+    int index = 0;
+    cout << "Enter the name of the person you want to edit: ";
+    cin >> index;
+    if (index < 0 || index >= abs->m_Size) {
+        cout << "Invalid index." << endl;
+        return;
+    };
+};
+
+void deletePerson(Addressbooks* abs) {
+    int index = 0;
+    cout << "Enter the name of the person you want to delete: ";
+    cin >> index;
+    if (index < 0 || index >= abs->m_Size) {
+        cout << "Invalid index." << endl;
+        return;
+    }
+};
+
+void listAllPerson(Addressbooks* abs) {
+    for (int i = 0; i < abs->m_Size; i++) {
+        cout << "Name: " << abs->personArray[i].m_Name << endl;
+        cout << "Sex: " << ((abs->personArray[i].m_Sex == 1) ? "Male" : "Female") << endl;
+        cout << "Age: " << abs->personArray[i].m_Age << endl;
+        cout << "Address: " << abs->personArray[i].m_Addr << endl;
+        cout << "Phone: " << abs->personArray[i].m_Phone << endl;
+        cout << "-----------------------------" << endl;
+    }
+}
+void clearAllPerson(Addressbooks* abs) {
+    abs->m_Size = 0;
+}
+int isExist(Addressbooks* abs, string name) {
+    for (int i = 0; i < abs->m_Size; i++) {
+        if (abs->personArray[i].m_Name == name) {
+            return 1;
+        }
+    }
+    return 0;
 }
 int main() {
     struct Addressbooks abs;
@@ -55,18 +124,17 @@ int main() {
         case 1:
             addPerson(&abs); //address transform message.
         case 2:
-            cout << "Edit an existing contact" << endl;
+            editPerson(&abs);
         case 3:
-            cout << "Delete an existing contact" << endl;
+            deletePerson(&abs);
         case 4:
-            cout << "Search for a contact" << endl;
+            showPerson(&abs);
         case 5:
-            cout << "List all contacts" << endl;
+            listAllPerson(&abs);
         case 6:
-            cout << "Clear all contacts" << endl;
+            clearAllPerson(&abs);
         case 0:
-            cout << "Exit" << endl;
-            break;
+        break;
         default:
             cout << "Invalid choice. Please try again." << endl;
         }
