@@ -19,6 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="ContactsAPP.cpp" />
     <ClCompile Include="HelloWorld.cpp" />
     <ClCompile Include="swap.cpp" />
   </ItemGroup>

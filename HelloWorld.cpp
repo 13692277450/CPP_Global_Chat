@@ -38,9 +38,9 @@ void printInfo(struct Teacher tArray[], int len) {
 			cout << "\tStudent Name: " << tArray[i].sArray[j].name << ", Score: " << tArray[i].sArray[j].score << endl;
 		}
 	}
-}/*
+}
 
-
+/*
 struct Worker {
 		int id;
 		string name;
@@ -63,7 +63,7 @@ struct Worker {
 //	cout << "Salary: " << w1->salary << endl;
 //}
 
-int main() {
+int main1() {
 	//int a = 10;
 	//cout << "Hello World" << endl;
 	////system("pause");
@@ -225,7 +225,7 @@ int main() {
 	for (int i = 0; i < sizeof(arr) / sizeof(arr[0]) - 1; ++i) {
 		for (int j = 0; j < sizeof(arr) / sizeof(arr[0]) - 1 - i; ++j) {
 			if (arr[j] > arr[j + 1]) {
-				int temp = arr[j];
+				int temp = arr[j]; // if arr change:struct Hero tem = heroArray[j]
 				arr[j] = arr[j + 1];
 				arr[j+1] = temp;
 			}
