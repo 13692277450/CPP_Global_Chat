@@ -1,8 +1,17 @@
 //Global chat application will develp after two months because I just start learning C++ today.
 #include <iostream>
+#include "swap.h"
+
+
 using namespace std;
 #define Day 7
 const int Month = 12;
+
+
+
+int add(int num1, int num2) {
+	return num1 + num2;
+}
 
 int main() {
 	//int a = 10;
@@ -158,7 +167,7 @@ int main() {
 		cout << "arr[" << i << "]:" << arr[i] << endl;
 	}*/
 	///////////////////////////////////////////////////////////////////////////////////
-	int arr[9] = { 8,5,1,3,2,7,4,6,9 };
+	/*int arr[9] = { 8,5,1,3,2,7,4,6,9 };
 	cout << "Before: " << endl;
 	for (int i = 0; i < sizeof(arr) / sizeof(arr[0]); ++i) {
 		cout << "arr[" << i << "]:" << arr[i] << endl;
@@ -175,6 +184,45 @@ int main() {
 	cout << "After: " << endl;
 	for (int i = 0; i < sizeof(arr) / sizeof(arr[0]); ++i) {
 		cout << "arr[" << i << "]:" << arr[i] << endl;
+	}*/
+///////////////////////////////////////////////////////////////////////////////////
+	/*int arr[2][3] = { {1,2,3},{4,5,6} };
+	for (int i =0; i < sizeof(arr) / sizeof(arr[0]); ++i) {
+		for (int j = 0; j < sizeof(arr[0]) / sizeof(arr[0][0]); ++j) {
+			cout << "arr[" << i << "][" << j << "]:" << arr[i][j] << endl;
+		}
 	}
+	cout << "sizeof(arr):" << sizeof(arr) << endl;
+	cout << "sizeof(arr[0]):" << sizeof(arr[0]) << endl;
+	cout << "sizeof(arr[0][0]):" << sizeof((int)&arr[0][0]) << endl; */
+	////////////////////////////////////////////////////////////////////////////////
+	/*int arr[3][4] = { {1,2,3,4},{5,6,7,8},{9,10,11,12} };
+	for (int i = 0; i < sizeof(arr) / sizeof(arr[0]); ++i) {
+		for (int j = 0; j < sizeof(arr[0]) / sizeof(arr[0][0]); ++j) {
+			cout << "arr[" << i << "][" << j << "]:" << arr[i][j] << endl;
+		}
+	}*/
+	////////////////////////////////////////////////////////////////////////////////
+	/*int scores[3][3]=
+	{
+		{100,100,100},
+		{40,50,60},
+		{79,82,95}
+	};
+	for (int i = 0; i < 3; i++) {
+		int sum = 0;
+
+		for (int j = 0; j < 3; j++) {
+			sum += scores[i][j];
+			cout << "scores" << scores[i][j] << endl;
+		}
+		cout <<"Total score: " << i+1 << "scores" << sum << endl;
+	}*/
+	///////////////////////////////////////////////////////////////////////////////
+	//int a = add(10, 20);
+	//cout << a;
+
+	swap(10, 20);
+
 	return 0;
 }
