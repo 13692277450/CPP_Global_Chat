@@ -1,17 +1,67 @@
 //Global chat application will develp after two months because I just start learning C++ today.
 #include <iostream>
 #include "swap.h"
-
+#include <ctime>
 
 using namespace std;
 #define Day 7
 const int Month = 12;
 
+struct Stu {
+	string name;
+	float score;
+};
+struct Teacher {
+	string tName;
+	struct Stu sArray[5];
+};
 
-
-int add(int num1, int num2) {
-	return num1 + num2;
+void allocateSpace(struct Teacher tArray[], int len) {
+	string nameSeed = "ABCDE";
+	for (int i = 0; i < len; i++) {
+		tArray[i].tName = "Teacher_";
+				tArray[i].tName += nameSeed[i];
+			/*cout << "nameSeed i: " << nameSeed[i] << endl;
+			cout << "Teacher Name: " << tArray[i].tName << endl;*/
+			for (int j = 0; j < 5; j++) {
+				tArray[i].sArray[j].name = "Student_" + nameSeed[j];
+				tArray[i].sArray[j].score = rand() % 61 + 40;
+			}
+	}
 }
+
+void printInfo(struct Teacher tArray[], int len) {
+	for (int i = 0; i < len; i++) {
+		cout << "Teacher: " << tArray[i].tName << endl;
+		cout <<  endl;
+		for (int j = 0; j < 5; j++) {
+			cout << "\tStudent Name: " << tArray[i].sArray[j].name << ", Score: " << tArray[i].sArray[j].score << endl;
+		}
+	}
+}/*
+
+
+struct Worker {
+		int id;
+		string name;
+		float salary;
+	}s6;*/
+
+//int add(int num1, int num2) {
+//	return num1 + num2;
+//}
+//void printWorker(Worker w1) {
+//	w1.salary = 1000;
+//	cout << "ID: " << w1.id << endl;
+//	cout << "Name: " << w1.name << endl;
+//	cout << "Salary: " << w1.salary << endl;
+//}
+//void printWorker(Worker* w1) {  //use const to fixed the value.
+//	w1->salary = 1000000;   //箭头运算符，指向指针的成员变量。Affect the original value.all the pointer point to the same value.
+//	cout << "ID: " << w1->id << endl;
+//	cout << "Name: " << w1->name << endl;
+//	cout << "Salary: " << w1->salary << endl;
+//}
 
 int main() {
 	//int a = 10;
@@ -222,7 +272,97 @@ int main() {
 	//int a = add(10, 20);
 	//cout << a;
 
-	swap(10, 20);
+	//swap(10, 20);
+	/////////////////////////////////////////////////////////////////////////////
+	//int a = 10;
+	//int * p = &a;
+	//int * c = NULL;
+	//cout << &a;
+	//cout << endl;
+	//cout << p;
+	//cout << endl;
+
+	//cout << *p;
+	/////////////////////////////////////////////////////////
+	//int a = 10;
+	//int * const p = &a; //指针的指向不可以改，但是指向的值可以改
+ //   const int * c = &a; //指向的值不可以改，但是指针的指向可以改
+	//int const * d = &a; //指向的值可以改，但是指针的指向不可以改
+	//const int * const e = &a; //指向的值不可以改，指针的指向也不可以改
+
+	//int arr[10] = { 1,2,3,4,5,6,7,8,9,10 };
+	//const int * p1 = arr;
+	//for (int i = 0; i < sizeof(arr) / sizeof(arr[0]); ++i) {
+	//	cout << "arr[" << i << "]:" << *(p1 + i) << endl;
+	//}
+	//cout << endl;
+    ////////////////////////////////////////////////////////////
+    //int arr[10] = { 1,2,3,4,5,6,7,8,9,10 };
+	//const int * p1 = arr;
+	//for (int i = 0; i < sizeof(arr) / sizeof(arr[0]); ++i) {
+	//	cout << "arr[" << i << "]:" << *(p1 + i) << endl;
+	//}
+	//cout << endl;
+    //const int * const p2 = arr;
+	//for (int i = 0; i < sizeof(arr) / sizeof(arr[0]); ++i) {
+	//	cout << "arr[" << i << "]:" << *(p2 + i) << endl;
+	//}
+	//cout << endl;
+    
+	///////////////////////////////////////////////////////////
+	/*struct Worker {
+		int id;
+		string name;
+		float salary;
+	}s6;
+	s6.id = 1001;
+	s6.name = "Tom";
+	s6.salary = 5000.0;
+	cout << s6.id << endl;
+	cout << s6.name << endl;
+	cout << s6.salary << endl;*/
+    ////////////////////////////////////////////////////////////////
+	//struct Worker {
+	//	int id;
+	//	string name;
+	//	float salary;
+	//}s6;
+	//Worker s3[] = { {},{} };
+	//Worker arr[3] = {
+	//	{1001,"Tom",5000.0},
+	//	{1002,"Jerry",6000.0},
+	//	{1003,"Mike",7000.0}
+	//};
+	//for (int i = 0; i < sizeof(arr) / sizeof(arr[0]); ++i) {
+	//	cout << "id: " << arr[i].id 
+	//	 << "name: " << arr[i].name 
+	//	 << "salary: " << arr[i].salary << endl;
+
+	//}
+	//struct Worker w2 = { 1004,"Jack",8000.0 };
+	//Worker * p = &w2;
+	//cout << p->id;   //need arrow to access the member of struct through pointer.
+	//cout << p->name;
+	//cout << p->salary;
+	///////////////////////////////////////////////////////////////////////
+	/*struct Worker w2 = { 1004,"Jack",8000.0 };
+	printWorker(w2);
+	printWorker(&w2);
+	cout << w2.salary << endl;*/
+    //////////////////////////////////////////////////////////////////////
+    srand((unsigned int)time(NULL));
+	struct Teacher tArray[3];
+	int len = sizeof(tArray) / sizeof(tArray[0]);
+	allocateSpace(tArray, len);
+	printInfo(tArray, len);
+
+
+
+
+
+
+
+
 
 	return 0;
 }
