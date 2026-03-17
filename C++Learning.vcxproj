@@ -19,12 +19,17 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="circle.cpp" />
     <ClCompile Include="ContactsAPP.cpp" />
     <ClCompile Include="HelloWorld.cpp" />
+    <ClCompile Include="memoryAddress.cpp" />
+    <ClCompile Include="point.cpp" />
     <ClCompile Include="swap.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="circle.h" />
     <ClInclude Include="helloworld.h" />
+    <ClInclude Include="point.h" />
     <ClInclude Include="swap.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">

@@ -29,7 +29,14 @@ struct Addressbooks {
 
     int m_Size;
 };
-
+int isExist(Addressbooks* abs, string name) {
+    for (int i = 0; i < abs->m_Size; i++) {
+        if (abs->personArray[i].m_Name == name) {
+            return 1;
+        }
+    }
+    return 0;
+}
 void addPerson(Addressbooks* abs) {
     if (abs->m_Size == MAX) {
         cout << "The address book is full." << endl;
@@ -73,21 +80,49 @@ void showPerson(Addressbooks* abs) {
 }
 
 void editPerson(Addressbooks* abs) {
-    int index = 0;
-    cout << "Enter the name of the person you want to edit: ";
-    cin >> index;
-    if (index < 0 || index >= abs->m_Size) {
-        cout << "Invalid index." << endl;
+    string editName;
+    cout << "Enter the name of the person you want to delete: ";
+    cin >> editName;
+    if (isExist(abs, editName) == 1) {
+        for (int i = 0; i < abs->m_Size - 1; i++) {
+            struct Person personTemp;
+            cout << "Enter the name: ";
+            cin >> personTemp.m_Name;
+            cout << "Enter the sex (1 for male, 0 for female): ";
+            cin >> personTemp.m_Sex;
+            cout << "Enter the age: ";
+            cin >> personTemp.m_Age;
+            cout << "Enter the address: ";
+            cin >> personTemp.m_Addr;
+            cout << "Enter the phone number: ";
+            cin >> personTemp.m_Phone;
+            abs->personArray[abs->m_Size] = personTemp;
+            abs->m_Size++;
+            cout << "Person added successfully." << endl;
+            system("pause");
+            system("cls");
+        }
         return;
-    };
+    }
+    else {
+        cout << "Person not found, pls double check name." << endl;
+        return;
+    }
 };
 
 void deletePerson(Addressbooks* abs) {
-    int index = 0;
+    string delName;
     cout << "Enter the name of the person you want to delete: ";
-    cin >> index;
-    if (index < 0 || index >= abs->m_Size) {
-        cout << "Invalid index." << endl;
+    cin >> delName;
+    if (isExist(abs, delName) == 1) {
+        for (int i =0; i < abs->m_Size - 1 ; i++) {
+            abs->personArray[i] = abs->personArray[i + 1];
+            cout << "Person deleted successfully." << endl;
+        }
+        return;
+    }
+    else {
+        cout << "Person not found, pls double check name." << endl;
         return;
     }
 };
@@ -105,15 +140,8 @@ void listAllPerson(Addressbooks* abs) {
 void clearAllPerson(Addressbooks* abs) {
     abs->m_Size = 0;
 }
-int isExist(Addressbooks* abs, string name) {
-    for (int i = 0; i < abs->m_Size; i++) {
-        if (abs->personArray[i].m_Name == name) {
-            return 1;
-        }
-    }
-    return 0;
-}
-int main() {
+
+int main2() {
     struct Addressbooks abs;
     abs.m_Size = 0;
     int select = 0;
