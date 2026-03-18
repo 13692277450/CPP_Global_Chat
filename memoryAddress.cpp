@@ -1,41 +1,210 @@
-#include <iostream>
-#include "Circle.h"
-#include "Point.h"
-using namespace std;
+//#include <iostream>					  s
+//#include "Circle.h"
+//#include "Point.h"
+//#include <string>
+//using namespace std;
+//
+//class Person {
+//public:
+//	void operator<<(ostream& os) {
+//		os << "m_A = " << m_A << endl;
+//		os << "m_B = " << m_B << endl;
+//	}
+//	int m_A;
+//	int m_B;
+//
+//};
+////
+////void operator<<(ostream &cout, Person &p) {
+////	cout << "m_A = " << p.m_A + 99 << endl;
+////	cout << "m_B = " << p.m_B + 88 << endl;
+////}
+//
+//ostream & operator<<(ostream& cout, Person& p) {
+//	cout << "m_A = " << p.m_A + 99 << endl;
+//	cout << "m_B = " << p.m_B + 8 << endl;
+//	return cout;
+//}
+//
+//void test01() {
+//	Person p;
+//	p.m_A = 10;
+//	p.m_B = 10;
+//	cout << "p.m_A = " << p.m_A << endl;
+//	cout << "p.m_B = " << p.m_B << endl;
+//	cout << p << endl;
+//};
+//
+//int main() {
+//	test01();
+//}
 
-class Person3 {
+//class Person4 {
+//
+//public:
+//	Person4 operator+(Person4& p) {
+//		Person4 temp;
+//		temp.m_A = this->m_A + p.m_A;
+//		temp.m_B = this->m_B + p.m_B;
+//		return temp;
+//	}
+//	int m_A;
+//	int m_B;
+//};
+//
+//Person4 operator+(Person4& p1, Person4& p2) {
+//	Person4 temp;
+//	temp.m_A = p1.m_A + p2.m_A;
+//	temp.m_B = p1.m_B + p2.m_B;
+//	return temp;
+//}
+//
+//
+//Person4 operator+(int num, Person4& p) {
+//	Person4 temp;
+//	temp.m_A = num + p.m_A;
+//	temp.m_B = num + p.m_B;
+//	return temp;
+//}
+//
+//void test01() {
+//	Person4 p1;
+//			p1.m_A = 10;
+//			p1.m_B = 10;
+//	Person4 p2;
+//	p2.m_A = 10;
+//	p2.m_B = 10;
+//	
+//	//Person4 p3 = p1 + p2;*/
+//	Person4 p3 = operator+(p1, p2);
+//	cout << "p3.m_A = " << p3.m_A << endl;
+//	cout << "p3.m_B = " << p3.m_B << endl;
+//
+//	Person4 p4 = 10 + p3;
+//	cout << "p4.m_A = " << p4.m_A << endl;
+//	cout << "p4.m_B = " << p4.m_B << endl;
+//
+//			
+//}
+//int main() {
+//	test01();
+//}
+//
+//class Building;
+//								   
+//class GoodFriend {
+//public:
+//	GoodFriend();
+//	void visit();
+//	Building* building;
+//};
+//
+//class Building {
+//	friend void  GoodFriend::visit();	//friend 类， 让GoodFriend类可以访问私有成员
+//	//friend class GoodFriend;	//friend 类， 让GoodFriend类可以访问私有成员
+//public:
+//	Building();
+//
+//
+//
+//public:
+//	string m_SittingRoom;
+//
+//
+//private:
+//	string m_BedRoom;
+//};
+//Building::Building() {
+//	m_SittingRoom = "客厅";
+//	m_BedRoom = "卧室";
+//}
+//GoodFriend::GoodFriend() {
+//	building = new Building;
+//}
+//void GoodFriend::visit() {
+//	cout << "GoodFriend is accssing  " << building->m_SittingRoom;
+//	cout << "GoodFriend is accssing  " << building->m_BedRoom;
+//}
+//
+//int main() {
+//	GoodFriend friend1;
+//	friend1.visit();
+//}
 
-public:
-	Person3(int age) {
-		m_Age = age;
-		this->age = age;
-	};
+//class Building {
+//	friend void goodHouse(Building* building);	//friend 关键字， 让goodHouse函数可以访问私有成员
+//
+//public:
+//	Building() {
+//		m_SittingRoom = "客厅";
+//		m_BedRoom = "卧室";
+//	}
+//
+//public:
+//	string m_SittingRoom;
+//
+//
+//private:
+//	string m_BedRoom;
+//
+//};
+//void goodHouse(Building* building) {
+//  cout << "goodHouse is accssing  " << building->m_SittingRoom;
+//	cout << "goodHouse is accssing  " << building->m_BedRoom;	 //friend 关键字， 让goodHouse函数可以访问私有成员
+//}
+//
+//void test01() {
+//	cout << "test01" << endl;
+//}
+//
+//int main() {
+//	Building building;
+//	goodHouse(&building);
+//
+//}
 
-	void PersonaAddAge(Person3& p) {
-		this->age += p.age;
-	}
-	int m_Age;
-	int age;
-};
 
-void test01() {
-	Person3 p1(20);
-	cout << "p1的年龄为：" << p1.m_Age << endl;
-	Person3 p2(10);
-	cout << "p2的年龄为：" << p2.age << endl;
-}
-void test02() {
-	Person3 p1(22);
-	Person3 p2(100);
-	p2.PersonaAddAge(p1);
-	cout << "p2的年龄为：" << p2.age << endl;
-}
 
-int main() {
-	test02();
-	system("pause");
-	return 0;
-}
+
+//class Person3 {
+//
+//public:
+//	Person3(int age) {
+//		m_Age = age;
+//		this->age = age;
+//	};
+//
+//	void PersonaAddAge(Person3& p) {
+//		this->age += p.age;
+//		this->m_B = 100;
+//	}
+//	void showPerson() const {
+//	    this->m_B = 100;	//指针指向不能修改， 有const	， 但是mutable除外
+//	}
+//	int m_Age;
+//	int age;
+//	mutable int m_B;	 //特殊变量mutable， 即使在常函数里面，也可以修改它的值。
+//};
+//
+//void test01() {
+//	Person3 p1(20);
+//	cout << "p1的年龄为：" << p1.m_Age << endl;
+//	Person3 p2(10);
+//	cout << "p2的年龄为：" << p2.age << endl;
+//}
+//void test02() {				  
+//	const Person3 p22(10);	  //加const变成常函数
+//	Person3 p1(22);
+//	Person3 p2(100);
+//	p2.PersonaAddAge(p1);
+//	cout << "p2的年龄为：" << p2.age << endl;
+//}
+//
+//int main() {
+//	test02();
+//	system("pause");
+//	return 0;
+//}
 
 //class Person1 {
 //           int age1;

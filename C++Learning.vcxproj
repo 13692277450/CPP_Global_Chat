@@ -22,6 +22,7 @@
     <ClCompile Include="circle.cpp" />
     <ClCompile Include="ContactsAPP.cpp" />
     <ClCompile Include="HelloWorld.cpp" />
+    <ClCompile Include="inheritability.cpp" />
     <ClCompile Include="memoryAddress.cpp" />
     <ClCompile Include="point.cpp" />
     <ClCompile Include="swap.cpp" />
