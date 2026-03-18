@@ -3,53 +3,96 @@
 #include "Point.h"
 using namespace std;
 
+class Person3 {
 
-class Person1 {
-           int age1;
 public:
-    //构造函数：构造函数的名字要和类名相同，并且没有返回值类型。 只有在创建对象时才会调用构造函数，可以重载。
+	Person3(int age) {
+		m_Age = age;
+		this->age = age;
+	};
 
-    Person1() {
-        cout << "Person()" << endl;
-    }
-
-    Person1(int a) {
-        age1 = a;
-        cout << "Parameter Person()" << endl;
-    }
-    Person1(const Person1 &p1 )  {
-        //拷贝构造函数：拷贝构造函数的名称要和类名相同
-        age1 = p1.age1;
-        cout << "copy Person()" << endl;
-    }
-    //析构函数：析构函数的名称要和类名相同，并且在前面加上波浪号（~），并且没有返回值类型。 只有在对象被销毁时才会调用析构函数。
-    //对象的生命周期是从创建到销毁，调用析构函数1次。 不可以加void修饰符。不可以有参数。不可以重载
-    ~Person1() {
-        cout << "~Person()" << endl;
-    } 
-
+	void PersonaAddAge(Person3& p) {
+		this->age += p.age;
+	}
+	int m_Age;
+	int age;
 };
 
-void func() {
-    //调用拷贝构造函数
-    Person1 p;
-    Person1 p2(10);
-    Person1 p3(p2);
-                    //显式调用拷贝构造函数
-    Person1 p4;
-    Person1 p5 = Person1(10);
-    Person1 p6 = Person1(p5);
-    //隐试转换法调用拷贝构造函数
-
-
+void test01() {
+	Person3 p1(20);
+	cout << "p1的年龄为：" << p1.m_Age << endl;
+	Person3 p2(10);
+	cout << "p2的年龄为：" << p2.age << endl;
+}
+void test02() {
+	Person3 p1(22);
+	Person3 p2(100);
+	p2.PersonaAddAge(p1);
+	cout << "p2的年龄为：" << p2.age << endl;
 }
 
 int main() {
-    func();
-    //Person1 p;
-    system("pause");
-    return 0;
+	test02();
+	system("pause");
+	return 0;
 }
+
+//class Person1 {
+//           int age1;
+//public:
+//    //构造函数：构造函数的名字要和类名相同，并且没有返回值类型。 只有在创建对象时才会调用构造函数，可以重载。
+//
+//    Person1() {
+//        cout << "Person()" << endl;
+//    }
+//
+//    Person1(int a) {
+//        age1 = a;
+//        cout << "Parameter Person()" << endl;
+//    }
+//    Person1(int a, int b, int c) : m_Age(a), m_B(b), m_C(c) {
+//        cout << "Parameter Person()" << endl;
+//    }
+//    Person1(const Person1 &p1 )  {
+//        //拷贝构造函数：拷贝构造函数的名称要和类名相同
+//        age1 = p1.age1;
+//        cout << "copy Person()" << endl;
+//    }
+//    //析构函数：析构函数的名称要和类名相同，并且在前面加上波浪号（~），并且没有返回值类型。 只有在对象被销毁时才会调用析构函数。
+//    //对象的生命周期是从创建到销毁，调用析构函数1次。 不可以加void修饰符。不可以有参数。不可以重载
+//    ~Person1() {
+//        cout << "~Person()" << endl;
+//    } 
+//    int m_Age;
+//    int m_B;
+//    int m_C;
+//
+//};
+//
+//void func() {
+//    //调用拷贝构造函数
+//    Person1 p;
+//    Person1 p2(10);
+//    Person1 p3(p2);
+//                    //显式调用拷贝构造函数
+//    Person1 p4;
+//    Person1 p5 = Person1(10);
+//    Person1 p6 = Person1(p5);
+//    //隐试转换法调用拷贝构造函数
+//    Person1 p7(30, 40, 50);
+//    cout << p7.m_Age << endl;
+//    cout << p7.m_B << endl;
+//    cout << p7.m_C << endl;
+//
+//
+//}
+//
+//int main() {
+//    func();
+//    //Person1 p;
+//    system("pause");
+//    return 0;
+//}
 
 
 
