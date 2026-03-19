@@ -1,55 +1,55 @@
-#include <iostream>					  s
-#include "Circle.h"
-#include "Point.h"
-#include <string>
-using namespace std;
-
-// 开发人员命令提示工具，在vs程序里面
-//		vs cmd line : cl /d1（one） reportSingleClassLayoutJava Circle.cpp
-// 
-
-class Animal {
-
-public:
-	virtual void eat() {
-		cout << "animal eat" << endl;
-	}
-};
-
-class Wolf : public Animal {
-public:
-	void eat() {
-		cout << "dog eat meat" << endl;
-	}
-};
-
-class Cow : public Animal {
-public:
-	void eat() {
-		cout << "cow eat grass" << endl;
-	}
-
-};
-void DoEat(Animal & animal) {
-	animal.eat();
-};
-void test02() {
-	cout << "test02" << endl;
-	Wolf wolf;
-	DoEat(wolf);
-	Cow cow;
-	DoEat(cow);
-}
-
-void test01() {
-	cout << "test01" << endl;
-	cout << "size of animal:  " << sizeof(Animal) << endl;
-}	
-
-int main() {
-	test01();
-}
-
+//#include <iostream>					  s
+//#include "Circle.h"
+//#include "Point.h"
+//#include <string>
+//using namespace std;
+//
+//// 开发人员命令提示工具，在vs程序里面
+////		vs cmd line : cl /d1（one） reportSingleClassLayoutJava Circle.cpp
+//// 
+//
+//class Animal {
+//
+//public:
+//	virtual void eat() {
+//		cout << "animal eat" << endl;
+//	}
+//};
+//
+//class Wolf : public Animal {
+//public:
+//	void eat() {
+//		cout << "dog eat meat" << endl;
+//	}
+//};
+//
+//class Cow : public Animal {
+//public:
+//	void eat() {
+//		cout << "cow eat grass" << endl;
+//	}
+//
+//};
+//void DoEat(Animal & animal) {
+//	animal.eat();
+//};
+//void test02() {
+//	cout << "test02" << endl;
+//	Wolf wolf;
+//	DoEat(wolf);
+//	Cow cow;
+//	DoEat(cow);
+//}
+//
+//void test01() {
+//	cout << "test01" << endl;
+//	cout << "size of animal:  " << sizeof(Animal) << endl;
+//}	
+//
+//int main5() {
+//	test01();
+//}
+//
 
 
 

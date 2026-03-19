@@ -26,6 +26,7 @@
     <ClCompile Include="memoryAddress.cpp" />
     <ClCompile Include="point.cpp" />
     <ClCompile Include="swap.cpp" />
+    <ClCompile Include="virtualclass.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="circle.h" />
