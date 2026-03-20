@@ -21,6 +21,7 @@
   <ItemGroup>
     <ClCompile Include="circle.cpp" />
     <ClCompile Include="ContactsAPP.cpp" />
+    <ClCompile Include="fileoperate.cpp" />
     <ClCompile Include="HelloWorld.cpp" />
     <ClCompile Include="inheritability.cpp" />
     <ClCompile Include="memoryAddress.cpp" />
