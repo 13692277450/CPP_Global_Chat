@@ -42,6 +42,12 @@
     <ClCompile Include="fileoperate.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="MyArrayMain.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="stl_vector.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="helloworld.h">
@@ -54,6 +60,9 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="circle.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="MyArray.hpp">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
