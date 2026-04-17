@@ -29,7 +29,9 @@
     <ClCompile Include="point.cpp" />
     <ClCompile Include="serverRoomOrder.cpp" />
     <ClCompile Include="stl_vector.cpp" />
+    <ClCompile Include="student.cpp" />
     <ClCompile Include="swap.cpp" />
+    <ClCompile Include="teacher.cpp" />
     <ClCompile Include="virtualclass.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -37,8 +39,10 @@
     <ClInclude Include="helloworld.h" />
     <ClInclude Include="MyArray.hpp" />
     <ClInclude Include="point.h" />
+    <ClInclude Include="student.h" />
     <ClInclude Include="swap.h" />
-    <ClInclude Include="indentity.h" />
+    <ClInclude Include="Identity.h" />
+    <ClInclude Include="teacher.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>

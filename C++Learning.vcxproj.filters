@@ -51,6 +51,12 @@
     <ClCompile Include="serverRoomOrder.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="student.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="teacher.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="helloworld.h">
@@ -68,7 +74,13 @@
     <ClInclude Include="MyArray.hpp">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="indentity.h">
+    <ClInclude Include="Identity.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="student.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="teacher.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
