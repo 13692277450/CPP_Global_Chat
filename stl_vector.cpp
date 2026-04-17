@@ -12,54 +12,57 @@
 using namespace std;
 
 
-class PersonU {
-public:
-	PersonU(string name, int age, int height) {
-		this->m_Name = name;
-		this->m_Age = age;
-		this->m_Height = height;;
-	}
 
-	string m_Name;
-	int m_Age;
-	int m_Height;
-};
 
-bool comparePerson(PersonU& v1, PersonU& v2) {
-
-	if (v1.m_Age == v2.m_Age) {
-		return v1.m_Height < v2.m_Height;
-	}
-	else {
-		return 	 v1.m_Age < v2.m_Age;
-	}
-
-}
-void test01() {
-	list<PersonU>L9;
-	L9.push_back(PersonU("张三", 18, 175));
-	L9.push_back(PersonU("李四", 30, 180));
-	L9.push_back(PersonU("王五", 22, 185));
-	L9.push_back(PersonU("赵六", 30, 190));
-	L9.push_back(PersonU("孙七", 26, 195));
-	L9.push_back(PersonU("周八", 30, 170));
-	L9.push_back(PersonU("吴九", 22, 170));
-	L9.push_back(PersonU("郑十", 18, 170));
-	L9.push_back(PersonU("王十", 26, 170));
-
-	for (list<PersonU>::iterator it = L9.begin(); it != L9.end(); it++) {
-		cout << "姓名：" << it->m_Name << " 年龄：" << it->m_Age << " 身高：" << it->m_Height << endl;
-	}
-	cout << endl;
-	L9.sort(comparePerson);
-	for (list<PersonU>::iterator it = L9.begin(); it != L9.end(); it++) {
-		cout << "姓名：" << it->m_Name << " 年龄：" << it->m_Age << " 身高：" << it->m_Height << endl;
-	}
-}
-
-int main() {
-	test01();
-}
+//
+//class PersonU {
+//public:
+//	PersonU(string name, int age, int height) {
+//		this->m_Name = name;
+//		this->m_Age = age;
+//		this->m_Height = height;;
+//	}
+//
+//	string m_Name;
+//	int m_Age;
+//	int m_Height;
+//};
+//
+//bool comparePerson(PersonU& v1, PersonU& v2) {
+//
+//	if (v1.m_Age == v2.m_Age) {
+//		return v1.m_Height < v2.m_Height;
+//	}
+//	else {
+//		return 	 v1.m_Age < v2.m_Age;
+//	}
+//
+//}
+//void test01() {
+//	list<PersonU>L9;
+//	L9.push_back(PersonU("张三", 18, 175));
+//	L9.push_back(PersonU("李四", 30, 180));
+//	L9.push_back(PersonU("王五", 22, 185));
+//	L9.push_back(PersonU("赵六", 30, 190));
+//	L9.push_back(PersonU("孙七", 26, 195));
+//	L9.push_back(PersonU("周八", 30, 170));
+//	L9.push_back(PersonU("吴九", 22, 170));
+//	L9.push_back(PersonU("郑十", 18, 170));
+//	L9.push_back(PersonU("王十", 26, 170));
+//
+//	for (list<PersonU>::iterator it = L9.begin(); it != L9.end(); it++) {
+//		cout << "姓名：" << it->m_Name << " 年龄：" << it->m_Age << " 身高：" << it->m_Height << endl;
+//	}
+//	cout << endl;
+//	L9.sort(comparePerson);
+//	for (list<PersonU>::iterator it = L9.begin(); it != L9.end(); it++) {
+//		cout << "姓名：" << it->m_Name << " 年龄：" << it->m_Age << " 身高：" << it->m_Height << endl;
+//	}
+//}
+//
+//int main() {
+//	test01();
+//}
 
 
 //

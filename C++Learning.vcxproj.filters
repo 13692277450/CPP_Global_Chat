@@ -48,6 +48,9 @@
     <ClCompile Include="stl_vector.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="serverRoomOrder.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="helloworld.h">
@@ -63,6 +66,9 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="MyArray.hpp">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="indentity.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
