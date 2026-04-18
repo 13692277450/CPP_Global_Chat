@@ -10,11 +10,92 @@
 
 using namespace std;
 
+
+void studentMenu(Identity*& student) {
+	while (true) {
+		student->operMenu();
+		//将父类指针转换为子类指针， 调用子类里的其他接口
+		Student* stu = (Student*)student;
+		int select = 0;
+		cin >> select;
+		if (select == 1) {	    //apply order
+			cout << "申请预约" << endl;
+			stu->applyOrder();
+
+		}
+		else if (select == 2) {	//show my order
+			cout << "查看我的预约" << endl;
+			stu->showMyOrder();
+
+		}
+		else if (select == 3) {	//show all order
+			cout << "查看所有预约" << endl;
+			stu->showAllOrder();
+
+		}
+		else if (select == 4) {	//cancel order
+			cout << "取消预约" << endl;
+			stu->cancelOrder();
+		}
+		else if (select == 5) {
+			delete student;
+			cout << "欢迎下一次继续使用订阅系统" << endl;
+			system("pause");
+			system("cls");
+			return;
+		}
+		else {
+			cout << "输入错误，请重新选择" << endl;
+			system("pause");
+			system("cls");
+		}
+	}
+}
+	
+
 void managerMenu(Identity* &manager) {
 	while(true) {
 		manager->operMenu();
 		//将父类指针转换为子类指针， 调用子类里的其他接口
 		Manager* man = (Manager*)manager;
+
+		int select = 0;
+		cin >> select;
+		if (select == 1) {	    //add account
+			cout << "添加Account" << endl;
+			man->addPerson();
+		
+		}
+		else if (select == 2) {	//show account
+			cout << "显示Account" << endl;
+			man->showPerson();
+		
+		}
+		else if (select == 3) {	//show computer room
+			cout << "显示Computer Room" << endl;
+			man->showComputer();
+		
+		}
+		else if (select == 4) {	//show computer room
+			cout << "清空预约" << endl;
+			man->cleanFile();
+
+		}
+		 else if (select == 5) {
+			delete manager;
+			 cout << "欢迎下一次继续使用admin系统" << endl;
+			 system("pause");
+			 system("cls");
+			 return;
+			// exit(0);
+		 }
+		 else {
+			 cout << "输入错误，请重新选择" << endl;
+			 system("pause");
+			 system("cls");
+			// return;
+		}
+
 
 	}
 }
@@ -68,6 +149,7 @@ void LoginIn(string fileName, int type)
 			   system("pause");
 			   system("cls");
 			   person = new Student(id, name, pwd);
+			   studentMenu(person);
 			   return;
 		   }
 		}
@@ -101,6 +183,7 @@ void LoginIn(string fileName, int type)
 				system("pause");
 				system("cls");
 				person = new Manager(name, pwd);
+				managerMenu(person);
 				return;
 			}
 		}
@@ -152,7 +235,7 @@ int main() {
 		}
 		case 4:
 		{
-			cout << "欢迎下一次继续使用订阅系统" << endl;
+			cout << "欢迎下一次继续使用订阅系统" << endl;	   
 			system("pause");
 			system("cls");
 			return 0;
@@ -171,3 +254,4 @@ int main() {
 	system("pause");
 	return 0;
 }
+

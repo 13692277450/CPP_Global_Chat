@@ -27,6 +27,7 @@
     <ClCompile Include="manager.cpp" />
     <ClCompile Include="memoryAddress.cpp" />
     <ClCompile Include="MyArrayMain.cpp" />
+    <ClCompile Include="orderFile.cpp" />
     <ClCompile Include="point.cpp" />
     <ClCompile Include="serverRoomOrder.cpp" />
     <ClCompile Include="stl_vector.cpp" />
@@ -37,10 +38,12 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="circle.h" />
+    <ClInclude Include="computerRoom.h" />
     <ClInclude Include="globalFile.h" />
     <ClInclude Include="helloworld.h" />
     <ClInclude Include="manager.h" />
     <ClInclude Include="MyArray.hpp" />
+    <ClInclude Include="orderFile.h" />
     <ClInclude Include="point.h" />
     <ClInclude Include="student.h" />
     <ClInclude Include="swap.h" />

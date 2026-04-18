@@ -2,7 +2,10 @@
 #include <iostream>
 #include <string>
 #include "Identity.h"
-
+#include "teacher.h"
+#include "Student.h"
+#include <vector>
+#include "computerRoom.h"
 
 using namespace std;
 
@@ -15,5 +18,10 @@ public:
 	void showPerson();
 	void showComputer();
 	void cleanFile();
+	void initVector();
+	vector<Student> vStu;
+	vector<Teacher> vTea;
+	bool checkRepeat(int id, int type);
+	vector<ComputerRoom> vCom;
 
 };
