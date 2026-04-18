@@ -6,6 +6,8 @@ Manager::Manager()
 }
 Manager::Manager(string name, string pwd)
 {
+	this->m_Name = name;
+	this->m_Pwd = pwd;
 
 }
 void Manager::operMenu()

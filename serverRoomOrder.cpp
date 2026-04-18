@@ -3,11 +3,26 @@
 #include "Identity.h"
 #include <fstream>
 #include "globalFile.h"
+#include "Student.h"
+#include "Student.h"
+#include "teacher.h"
+#include "manager.h"
+
 using namespace std;
+
+void managerMenu(Identity* &manager) {
+	while(true) {
+		manager->operMenu();
+		//将父类指针转换为子类指针， 调用子类里的其他接口
+		Manager* man = (Manager*)manager;
+
+	}
+}
 
 void LoginIn(string fileName, int type)
 {
-	Identity* identity = NULL;
+
+	Identity* person = NULL;
 	ifstream ifs;
 	ifs.open(fileName, ios::in);
 	if (!ifs.is_open()) {
@@ -16,7 +31,7 @@ void LoginIn(string fileName, int type)
 		return;
 	}
 
-	int id = 0;
+	int id;
 	string name;
 	string pwd;
 
@@ -36,21 +51,68 @@ void LoginIn(string fileName, int type)
 	cout << "请输入你的密码： " << endl;
 	cin >> pwd;
 
+	
 
 	if (type == 1) {
+		int fId;
+		string fName;
+		string fPwd;
+	
+		while (ifs >> fId && ifs >> fName && ifs >> fPwd)
+		{
+		
+
+		   if (fId == id && fName ==name  && fPwd  == pwd) {
+			   
+			   cout << "学生验证登录成功！\n" << endl;
+			   system("pause");
+			   system("cls");
+			   person = new Student(id, name, pwd);
+			   return;
+		   }
+		}
 
 	}
 	else if (type == 2) {
+		int fId;
+		string fName;
+		string fPwd;
+
+		while (ifs >> fId && ifs >> fName && ifs >> fPwd)
+		{
+			if (fId == id && fName == name && fPwd == pwd) {
+				cout << "教师验证登录成功！\n" << endl;
+				system("pause");
+				system("cls");
+				person = new Student(id, name, pwd);
+				return;
+			}
+		}
 
 	}
 	else if (type == 3) {
 
-	}
-	cout << "验证登录失败！请重新登录\n" << endl;
+		string fName;
+		string fPwd;
+		while (ifs >> fName && ifs >> fPwd)
+		{
+			if (fName == name && fPwd == pwd) {
+				cout << "管理员验证登录成功！\n" << endl;
+				system("pause");
+				system("cls");
+				person = new Manager(name, pwd);
+				return;
+			}
+		}
 
-	system("pause");
-	system("cls");
-	return;
+	}
+
+		cout << "验证登录失败！请重新登录\n" << endl;
+
+		system("pause");
+		system("cls");
+		return;
+	
 }
 
 int main() {
@@ -75,17 +137,17 @@ int main() {
 		switch (select) {
 		case 1:
 		{
-			LoginIn("student.txt", 1);
+			LoginIn(STUDENT_FILE, 1);
 			break;
 		}
 		case 2:
 		{
-			LoginIn("teacher.txt", 2);
+			LoginIn(TEACHER_FILE, 2);
 			break;
 		}
 		case 3:
 		{
-			LoginIn("admin.txt", 3);
+			LoginIn(ADMIN_FILE, 3);
 			break;
 		}
 		case 4:
